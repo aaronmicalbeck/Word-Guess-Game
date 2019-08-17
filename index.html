@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -15,16 +16,22 @@
 
     <div class="container">
 
-        <div class="jumbotron jumbotron-fluid mx-auto text-center justify-content-center">
+        <div class="jumbotron vertical-center jumbotron-fluid mx-auto text-center">
             <div class="container">
-                <h1 class="display-3">Dumb & Dumber Trivia</h1>
-                <h1 class="display-4">Guess the character's name!</h1>
-                <p class="lead">Press any key to begin the game.</p>
-                <p>Guesses Remaining: <span id="guessesLeft"></span></p>
+                <h1 class="display-3">Beach Mode 88</h1>
+                <h1 class="display-4">Guess the word</h1>
+                
+                <h2 id="guesses">Guesses Remaining: <span id="guessesLeft"></span></h2>
+                <br>
                 <h3>WINS: <span id="wins"> </span></h3>
+                <br>
                 <h3>LOSSES: <span id="losses"></span></h3>
+                <br>
                 <h3 id="wordtoguess">_ _ _ _ _ _ _ _</h3>
+                <br>
                 <h3>Letters Guessed: <span id="lettersGuessed"></span></h3>
+                <br>
+                <h2 id="instructions">Guess a letter to begin the game.</h2>
             </div>
         </div>
 

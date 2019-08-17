@@ -1,5 +1,14 @@
 body {
     height: 100%;
     background-color: bisque;
+    background-image: url(https://i.imgur.com/UZKEjzG.png);
 }
 
+.jumbotron {
+    background: none;
+    font-family: '8BITWONDERNominal'; 
+   font-weight: normal; 
+   font-style: normal; 
+    
+    
+}

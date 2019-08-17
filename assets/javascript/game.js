@@ -1,5 +1,6 @@
 // Global Vars
-var characters = ["lloyd", "harry", "mary", "mental", "shay", "beth", "seabass"];
+var characters = ["towel", "sunscreen", "surf", "waves", "beachball", "bikini",
+    "seagull", "jetski", "summer", "sandbar", "castle", "frisbee", "shark", "dolphin", "tsunami", "jellyfish", "umbrella"];
 var wordChoice = " ";
 var lettersinWord = [];
 var blanks = 0;
@@ -8,6 +9,9 @@ var wrongLetters = [];
 var winCounter = 0;
 var lossCounter = 0;
 var guessesRemaining = 5;
+var winsound = new Audio("emerge.wav");
+var losesound = new Audio("shutdown.wav");
+
 
 
 // functions
@@ -18,7 +22,7 @@ function newGame() {
     blanks = lettersinWord.length;
 
 
-    guessesRemaining = 5;
+    guessesRemaining = 10;
     wrongLetters = [];
     blanksandLetters = [];
 
@@ -36,7 +40,7 @@ function newGame() {
 
 
 
-    
+
 }
 
 
@@ -60,42 +64,51 @@ function check(letter) {
 
     }
 
-    else {wrongLetters.push(letter);
-    guessesRemaining--
+    else {
+        wrongLetters.push(letter);
+        guessesRemaining--
+
+    }
+
+
 
 }
-    
 
-
-}
-
-function gameOver(){
+function gameOver() {
     console.log("WIN COUNT: " + winCounter + " | Loss Count: " + lossCounter + " | Guesses Left" + guessesRemaining);
 
     document.getElementById("guessesLeft").textContent = guessesRemaining;
     document.getElementById("wordtoguess").textContent = blanksandLetters.join(" ");
     document.getElementById("lettersGuessed").textContent = wrongLetters.join("");
 
-    if(lettersinWord.toString() == blanksandLetters.toString()) {
+    if (lettersinWord.toString() == blanksandLetters.toString()) {
         winCounter++;
-        alert("WINNER!");
+
+        document.getElementById("instructions").textContent = ("YOU WIN. Refresh the page to begin a new game.");
 
         document.getElementById("wins").textContent = winCounter;
-        newGame();
+
+        winsound.play();
+        
+        
+
 
     }
 
-else if (guessesRemaining == 0) {
-    lossCounter++;
-    alert("LOSER");
-    document.getElementById("losses").textContent = lossCounter;
-    
-    newGame();
+    else if (guessesRemaining == 0) {
+        lossCounter++;
 
-}
+        document.getElementById("instructions").textContent = ("LOSER. Refresh the page to begin a new game...");
+        document.getElementById("losses").textContent = lossCounter;
+
+        losesound.play();
 
 
-    
+
+    }
+
+
+
 
 
 }
@@ -112,7 +125,6 @@ document.onkeyup = function () {
     console.log(userGuess);
 
 }
-
 
 
 
