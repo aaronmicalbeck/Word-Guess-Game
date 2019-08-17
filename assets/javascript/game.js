@@ -9,7 +9,7 @@ var wrongLetters = [];
 var winCounter = 0;
 var lossCounter = 0;
 var guessesRemaining = 5;
-var winsound = new Audio("emerge.wav");
+var winsound = new Audio("sweep.wav");
 var losesound = new Audio("shutdown.wav");
 
 
