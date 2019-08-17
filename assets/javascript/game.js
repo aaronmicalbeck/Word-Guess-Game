@@ -82,26 +82,23 @@ function gameOver() {
     document.getElementById("lettersGuessed").textContent = wrongLetters.join("");
 
     if (lettersinWord.toString() == blanksandLetters.toString()) {
-        winCounter++;
-
-        document.getElementById("instructions").textContent = ("YOU WIN. Refresh the page to begin a new game.");
-
-        document.getElementById("wins").textContent = winCounter;
-
         winsound.play();
-        
-        
+        winCounter++;
+        document.getElementById("wins").textContent = winCounter;
+        document.getElementById("instructions").textContent = ("YOU WIN. Choose another letter to begin game.");
+        newGame();
+
+
 
 
     }
 
     else if (guessesRemaining == 0) {
-        lossCounter++;
-
-        document.getElementById("instructions").textContent = ("LOSER. Refresh the page to begin a new game...");
-        document.getElementById("losses").textContent = lossCounter;
-
         losesound.play();
+        lossCounter++;
+        document.getElementById("losses").textContent = lossCounter;
+        document.getElementById("instructions").textContent = ("LOSER. Choose another letter to begin game...");
+        newGame();
 
 
 
