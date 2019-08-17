@@ -94,6 +94,7 @@ function gameOver() {
         winCounter++;
         document.getElementById("wins").textContent = winCounter;
         document.getElementById("instructions").textContent = ("YOU WIN. Choose another letter to begin game.");
+        alert("YOU WIN. The word was " + wordChoice);
         newGame();
 
 
