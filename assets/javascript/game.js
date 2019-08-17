@@ -16,6 +16,8 @@ var losesound = new Audio("shutdown.wav");
 
 // functions
 
+// computer chooses word from characters array
+
 function newGame() {
     wordChoice = characters[Math.floor(Math.random() * characters.length)];
     lettersinWord = wordChoice.split("");
@@ -43,6 +45,7 @@ function newGame() {
 
 }
 
+// checks to see if letter is in chosen word
 
 function check(letter) {
     var letterinWord = false;
@@ -54,8 +57,9 @@ function check(letter) {
         }
     }
 
-
-    if (letterinWord) {
+// if user guesses a letter in the word, add letter to blank
+    
+if (letterinWord) {
         for (var i = 0; i < blanks; i++) {
             if (wordChoice[i] == letter) {
                 blanksandLetters[i] = letter;
@@ -63,6 +67,8 @@ function check(letter) {
         }
 
     }
+
+    // if letter is not in chosen word, decrease guesses remaining and display user guess
 
     else {
         wrongLetters.push(letter);
@@ -74,8 +80,10 @@ function check(letter) {
 
 }
 
+// user wins & loses
+
 function gameOver() {
-    console.log("WIN COUNT: " + winCounter + " | Loss Count: " + lossCounter + " | Guesses Left" + guessesRemaining);
+    
 
     document.getElementById("guessesLeft").textContent = guessesRemaining;
     document.getElementById("wordtoguess").textContent = blanksandLetters.join(" ");
@@ -119,7 +127,6 @@ document.onkeyup = function () {
     check(userGuess);
     gameOver();
 
-    console.log(userGuess);
 
 }
 
